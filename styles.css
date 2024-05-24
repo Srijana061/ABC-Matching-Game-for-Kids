@@ -1,0 +1,85 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.game-board {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.letters, .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.card {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid #000;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none; /* Prevent canvas from blocking card clicks */
+}
+
+@media (max-width: 600px) {
+    .game-board {
+        flex-direction: column;
+        align-items: center;
+    }
+    .letters, .images {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .card {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+}
